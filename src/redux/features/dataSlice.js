@@ -15,6 +15,16 @@ const dataSlice = createSlice({
   initialState: {
     datas: [],
   },
+  reducers: {
+    search: (state, action) => {
+      console.log(action.payload);
+      if (action.payload) {
+        state.datas = state.datas.filter((data) => {
+          return data.mission_name.toLowerCase().includes(action.payload);
+        });
+      }
+    },
+  },
   extraReducers: {
     [dataFetch.pending]: (state, action) => {
       state.loading = true;
@@ -28,5 +38,7 @@ const dataSlice = createSlice({
     },
   },
 });
+
+export const { search } = dataSlice.actions;
 
 export default dataSlice.reducer;
