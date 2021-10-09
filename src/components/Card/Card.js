@@ -6,22 +6,42 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-export default function MediaCard() {
+export default function MediaCard({
+  missionName,
+  rocketName,
+  flightNumber,
+  launchStatus,
+  image,
+  upcoming,
+  details,
+}) {
+  console.log(upcoming);
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 400 }}>
       <CardMedia
         component="img"
-        height="140"
-        image="/static/images/cards/contemplative-reptile.jpg"
-        alt="green iguana"
+        height="400vh"
+        image={image}
+        alt="spacex image"
       />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
+      <CardContent alighnItems="left">
+        <Typography gutterBottom variant="h6">
+          Flight Number - {flightNumber}
+        </Typography>
+        <Typography gutterBottom variant="h6">
+          Mission Name -{missionName}
+        </Typography>
+        <Typography gutterBottom variant="h6">
+          Rocket Name -{rocketName}
+        </Typography>
+        <Typography gutterBottom variant="h6">
+          Launch Status -{launchStatus}
+        </Typography>
+        <Typography gutterBottom variant="h6">
+          Upcoming -{upcoming}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          {details}
         </Typography>
       </CardContent>
     </Card>

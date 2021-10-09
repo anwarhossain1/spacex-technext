@@ -13,14 +13,14 @@ export const dataFetch = createAsyncThunk("data/dataFetch", async (payload) => {
 const dataSlice = createSlice({
   name: "data",
   initialState: {
-    data: [],
+    datas: [],
   },
   extraReducers: {
     [dataFetch.pending]: (state, action) => {
       state.loading = true;
     },
     [dataFetch.fulfilled]: (state, action) => {
-      state.data = action.payload;
+      state.datas = action.payload;
       state.loading = false;
     },
     [dataFetch.rejected]: (state, action) => {
