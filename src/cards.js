@@ -15,7 +15,7 @@ const Cards = () => {
   console.log(filter, "filter");
 
   let spacex;
-  if (filter !== "") {
+  if (filter !== "" && search === "") {
     if (filter === "all") {
       spacex = datas;
       console.log("hello");
@@ -55,8 +55,9 @@ const Cards = () => {
       });
     } else if (filter === "success") {
       spacex = datas.filter((d) => {
-        if (d.launch_success) {
-          return d.launch_success === true;
+        if (d.upcoming) {
+          console.log("calling upcoming");
+          return d.upcoming;
         }
       });
     } else if (filter === "upcoming") {
@@ -67,8 +68,9 @@ const Cards = () => {
         }
       });
     } else {
+      spacex = datas;
     }
-  } else if (search !== "") {
+  } else if (filter === "all" && search !== "") {
     spacex = datas.filter((d) => d.mission_name.toLowerCase().includes(search));
   } else {
     spacex = datas;
