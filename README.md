@@ -38,8 +38,8 @@ yarn start or npm start
 
 ###### Testing
 
-- **JEST**- For unit testing and accessing **DOM**, JEST has been used. It is often good enough for testing React components.
-- **React Testing Library**- For Tesing React components without relying on their implementation details.
+<!-- - **JEST**- For unit testing and accessing **DOM**, JEST has been used. It is often good enough for testing React components.
+- **React Testing Library**- For Tesing React components without relying on their implementation details. -->
 
 ###### Project Architechture
 
