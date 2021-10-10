@@ -16,6 +16,7 @@ const dataSlice = createSlice({
     datas: [],
     search: "",
     filter: "",
+    alert: false,
   },
   reducers: {
     search: (state, action) => {

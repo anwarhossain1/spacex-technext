@@ -21,27 +21,19 @@ export default function MediaCard({
     <Card sx={{ maxWidth: 400 }}>
       <CardMedia
         component="img"
-        height="400vh"
+        height="300vh"
         image={image}
         alt="spacex image"
       />
-      <CardContent alighnItems="left">
-        <Typography gutterBottom variant="h6">
-          Flight Number - {flightNumber}
-        </Typography>
-        <Typography gutterBottom variant="h6">
-          Mission Name -{missionName}
-        </Typography>
-        <Typography gutterBottom variant="h6">
-          Rocket Name -{rocketName}
-        </Typography>
-        <Typography gutterBottom variant="h6">
-          Launch Year -{launchYear}
-        </Typography>
-        <Typography gutterBottom variant="h6">
+      <CardContent alighnItems="left" sx={{ mt: 2 }}>
+        <Typography variant="h6">Flight Number - {flightNumber}</Typography>
+        <Typography variant="h6">Mission Name -{missionName}</Typography>
+        <Typography variant="h6">Rocket Name -{rocketName}</Typography>
+        <Typography variant="h6">Launch Year -{launchYear}</Typography>
+        <Typography variant="h6">
           Launch Status -{!launchStatus ? <b>Success</b> : "Failed"}
         </Typography>
-        <Typography gutterBottom variant="h6">
+        <Typography variant="h6">
           Upcoming -{upcoming ? "Yes" : "No"}
         </Typography>
         <Typography variant="body2" color="text.secondary">

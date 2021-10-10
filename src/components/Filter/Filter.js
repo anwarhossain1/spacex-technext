@@ -5,7 +5,7 @@ import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
 import TextField from "@mui/material/TextField";
 import { useDispatch } from "react-redux";
-import { search, filter } from "../../redux/features/dataSlice";
+import { search, filter, alert } from "../../redux/features/dataSlice";
 
 const Filter = () => {
   const dispatch = useDispatch();

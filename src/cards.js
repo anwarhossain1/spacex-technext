@@ -7,11 +7,12 @@ import { dataFetch, search, filter } from "./redux/features/dataSlice";
 import Paper from "@mui/material/Paper";
 import { Button } from "@mui/material";
 import Filter from "./components/Filter/Filter";
+import Spinner from "./components/Spinner/Spinner";
 
 const Cards = () => {
   const dispatch = useDispatch();
   const stateData = useSelector((state) => state.spacexData);
-  const { datas, search, filter } = stateData;
+  const { datas, search, filter, loading } = stateData;
   console.log(filter, "filter");
 
   let spacex;
@@ -84,33 +85,37 @@ const Cards = () => {
   return (
     <>
       <Filter />
-      <Box sx={{ flexGrow: 1 }} m={5} p={5}>
-        <Grid
-          container
-          spacing={3}
-          direction="raw"
-          alignItems="center"
-          justify="center"
-        >
-          {spacex &&
-            spacex.map((data) => {
-              return (
-                <Grid item xs={12} md={3}>
-                  <Card
-                    flightNumber={data.flight_number}
-                    missionName={data.mission_name}
-                    rocketName={data.rocket.rocket_name}
-                    image={data.links.mission_patch}
-                    launchStatus={data.launch_success}
-                    upcoming={data.upcoming}
-                    details={data.details}
-                    launchYear={data.launch_year}
-                  />
-                </Grid>
-              );
-            })}
-        </Grid>
-      </Box>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <Box sx={{ flexGrow: 1 }} m={5} p={5}>
+          <Grid
+            container
+            spacing={3}
+            direction="raw"
+            alignItems="center"
+            justify="center"
+          >
+            {spacex &&
+              spacex.map((data) => {
+                return (
+                  <Grid item xs={12} md={3}>
+                    <Card
+                      flightNumber={data.flight_number}
+                      missionName={data.mission_name}
+                      rocketName={data.rocket.rocket_name}
+                      image={data.links.mission_patch}
+                      launchStatus={data.launch_success}
+                      upcoming={data.upcoming}
+                      details={data.details}
+                      launchYear={data.launch_year}
+                    />
+                  </Grid>
+                );
+              })}
+          </Grid>
+        </Box>
+      )}
     </>
   );
 };

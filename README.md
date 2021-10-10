@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# SpaceX Rocket launches
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a web service by which users can see launched rockets information of SpaceX. Users can also be able to search rockets details by name. Also they can filter data by
 
-## Available Scripts
+1. By Launch Date
+   i. Last Week
+   ii. Last Month
+   iii. Last Year
+2. By Launch Status ( Failure, Success )
+3. Is it upcoming?
 
-In the project directory, you can run:
+## Prerequisites
 
-### `yarn start`
+> \*\*use node
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To run this project into your environment
 
-### `yarn test`
+```
+git clone https://github.com/anwarhossain1/spacex-technext.git
+cd spacex-technext
+npm install
+yarn start or npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Functions implemented In the Project
 
-### `yarn build`
+1. Random selection of a restaurant within 3 km of the Monstar Lab Bangladesh Office.
+2. Map view showing the location of the selected restaurant.
+3. Keyword search for restaurants within 3 km of the office.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technical Choices
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **React**- React has been used into this application because of making this application fast, scalable, and simple. It works only on user interfaces in the application. Also data can be changed without reloading the page.
+- **React-Redux**- For using Provider and some hooks.
+- **Redux Toolkit**- Redux toolkit is a tiny little tool that makes redux more easy to implement and also by it, state management of the functional component of the project has been maintained.
+- **Axios**- Data fetch is a most important role into a web service. Here, for data fetching from the _API_, **Axios** has been used.
+- **MaterialUI**- MaterialUI has been used to design.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+###### API
 
-### `yarn eject`
+- **SpaceX API**- This API has been used to collect launched rockets data.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+###### Testing
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **JEST**- For unit testing and accessing **DOM**, JEST has been used. It is often good enough for testing React components.
+- **React Testing Library**- For Tesing React components without relying on their implementation details.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+###### Project Architechture
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### `src/`
 
-## Learn More
+This folder contains all the necessary folders and files of the application.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### `src/components`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+For accessing all the reusable components from a specific location.
 
-### Code Splitting
+#### `src/redux/store`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Contains store of the project.
 
-### Analyzing the Bundle Size
+#### `src/redux/features`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This folder contains reducers, action creators as slices.
 
-### Making a Progressive Web App
+## Trade-offs
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+No trade-offs have been made into the project.
 
-### Advanced Configuration
+#### I might do differently if I were to spend additional time on the project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **Testing**- I would add extra effort of mine to the project to make it more TDD(Test-driven development) friendly.
+2. **UI/UX**- I would try to make the ui more atractive and ux more user friendly.
