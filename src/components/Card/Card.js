@@ -14,6 +14,7 @@ export default function MediaCard({
   image,
   upcoming,
   details,
+  launchYear,
 }) {
   console.log(upcoming);
   return (
@@ -35,10 +36,13 @@ export default function MediaCard({
           Rocket Name -{rocketName}
         </Typography>
         <Typography gutterBottom variant="h6">
-          Launch Status -{launchStatus}
+          Launch Year -{launchYear}
         </Typography>
         <Typography gutterBottom variant="h6">
-          Upcoming -{upcoming}
+          Launch Status -{!launchStatus ? <b>Success</b> : "Failed"}
+        </Typography>
+        <Typography gutterBottom variant="h6">
+          Upcoming -{upcoming ? "Yes" : "No"}
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {details}

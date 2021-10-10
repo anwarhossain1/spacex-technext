@@ -14,15 +14,17 @@ const dataSlice = createSlice({
   name: "data",
   initialState: {
     datas: [],
+    search: "",
+    filter: "",
   },
   reducers: {
     search: (state, action) => {
       console.log(action.payload);
-      if (action.payload) {
-        state.datas = state.datas.filter((data) => {
-          return data.mission_name.toLowerCase().includes(action.payload);
-        });
-      }
+      state.search = action.payload;
+    },
+    filter: (state, action) => {
+      console.log(action.payload);
+      state.filter = action.payload;
     },
   },
   extraReducers: {
@@ -39,6 +41,6 @@ const dataSlice = createSlice({
   },
 });
 
-export const { search } = dataSlice.actions;
+export const { search, filter } = dataSlice.actions;
 
 export default dataSlice.reducer;
