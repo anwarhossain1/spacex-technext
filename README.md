@@ -24,12 +24,6 @@ npm install
 yarn start or npm start
 ```
 
-## Functions implemented In the Project
-
-1. Random selection of a restaurant within 3 km of the Monstar Lab Bangladesh Office.
-2. Map view showing the location of the selected restaurant.
-3. Keyword search for restaurants within 3 km of the office.
-
 ## Technical Choices
 
 - **React**- React has been used into this application because of making this application fast, scalable, and simple. It works only on user interfaces in the application. Also data can be changed without reloading the page.
