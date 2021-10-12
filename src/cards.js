@@ -8,6 +8,7 @@ import Paper from "@mui/material/Paper";
 import { Button } from "@mui/material";
 import Filter from "./components/Filter/Filter";
 import Spinner from "./components/Spinner/Spinner";
+import Pagination from "./components/Pagination/Pagination";
 
 const Cards = () => {
   const dispatch = useDispatch();
@@ -116,6 +117,7 @@ const Cards = () => {
           </Grid>
         </Box>
       )}
+      <Pagination />
     </>
   );
 };
