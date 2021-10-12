@@ -18,7 +18,7 @@ const dataSlice = createSlice({
     filter: "",
     alert: false,
     currentPage: 1,
-    datasPerPage: 12,
+    datasPerPage: 9,
   },
   reducers: {
     search: (state, action) => {

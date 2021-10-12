@@ -18,18 +18,16 @@ export default function MediaCard({
 }) {
   console.log(upcoming);
   return (
-    <Card sx={{ maxWidth: 400 }}>
-      <CardMedia
-        component="img"
-        height="300vh"
-        image={image}
-        alt="spacex image"
-      />
+    <Card style={{ width: "400px" }}>
+      <CardMedia component="img" image={image} alt="spacex image" />
       <CardContent alighnItems="left" sx={{ mt: 2 }}>
-        <Typography variant="h6">Flight Number - {flightNumber}</Typography>
+        <Typography variant="h6">Flight Number - {flightNumber} </Typography>
         <Typography variant="h6">Mission Name -{missionName}</Typography>
+
         <Typography variant="h6">Rocket Name -{rocketName}</Typography>
+
         <Typography variant="h6">Launch Year -{launchYear}</Typography>
+
         <Typography variant="h6">
           Launch Status -{!launchStatus ? <b>Success</b> : "Failed"}
         </Typography>

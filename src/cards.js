@@ -109,15 +109,20 @@ const Cards = () => {
         <Box sx={{ flexGrow: 1 }} m={5} p={5}>
           <Grid
             container
-            spacing={3}
             direction="raw"
             alignItems="center"
-            justify="center"
+            justifyContent="center"
           >
             {spacex &&
               spacex.map((data) => {
                 return (
-                  <Grid item xs={12} md={3}>
+                  <Grid
+                    xs={12}
+                    md={3}
+                    alignItems="center"
+                    justifyContent="center"
+                    m={2}
+                  >
                     <Card
                       flightNumber={data.flight_number}
                       missionName={data.mission_name}

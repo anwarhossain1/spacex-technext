@@ -10,7 +10,7 @@ const Paginationn = () => {
   const [page, setPage] = React.useState(1);
   const number = useSelector((state) => state.spacexData);
   const { datas } = number;
-  let totalPageNumbers = Math.ceil(datas.length / 10);
+  let totalPageNumbers = Math.ceil(datas.length / 9); //datas.length / datas on page
   const handleChange = (event, value) => {
     setPage(value);
     console.log(value);
