@@ -17,6 +17,8 @@ const dataSlice = createSlice({
     search: "",
     filter: "",
     alert: false,
+    currentPage: 1,
+    datasPerPage: 12,
   },
   reducers: {
     search: (state, action) => {
@@ -26,6 +28,9 @@ const dataSlice = createSlice({
     filter: (state, action) => {
       console.log(action.payload);
       state.filter = action.payload;
+    },
+    pageSelect: (state, action) => {
+      state.currentPage = action.payload;
     },
   },
   extraReducers: {
@@ -42,6 +47,6 @@ const dataSlice = createSlice({
   },
 });
 
-export const { search, filter } = dataSlice.actions;
+export const { search, filter, pageSelect } = dataSlice.actions;
 
 export default dataSlice.reducer;

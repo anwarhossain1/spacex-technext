@@ -13,14 +13,22 @@ import Pagination from "./components/Pagination/Pagination";
 const Cards = () => {
   const dispatch = useDispatch();
   const stateData = useSelector((state) => state.spacexData);
-  const { datas, search, filter, loading } = stateData;
+  const { datas, search, filter, loading, currentPage, datasPerPage } =
+    stateData;
   console.log(filter, "filter");
 
   let spacex;
+
   if (filter !== "" && search === "") {
+    // calculation For Pagination
+
     if (filter === "all") {
-      spacex = datas;
+      //spacex = datas;
       console.log("hello");
+      const indexOfLastData = currentPage * datasPerPage;
+      const indexOfFirstData = indexOfLastData - datasPerPage;
+      spacex = datas.slice(indexOfFirstData, indexOfLastData);
+      console.log(currentPage, "currentPage");
     } else if (filter === "lastyear") {
       let lastYear = new Date().getFullYear().toString();
       console.log(lastYear - 1);
@@ -70,13 +78,22 @@ const Cards = () => {
         }
       });
     } else {
-      spacex = datas;
+      const indexOfLastData = currentPage * datasPerPage;
+      const indexOfFirstData = indexOfLastData - datasPerPage;
+      spacex = datas.slice(indexOfFirstData, indexOfLastData);
+      console.log(currentPage, "currentPage");
+      //spacex = datas;
     }
   } else if (filter === "all" && search !== "") {
     spacex = datas.filter((d) => d.mission_name.toLowerCase().includes(search));
   } else {
-    spacex = datas;
+    //spacex = datas;
+    const indexOfLastData = currentPage * datasPerPage;
+    const indexOfFirstData = indexOfLastData - datasPerPage;
+    spacex = datas.slice(indexOfFirstData, indexOfLastData);
+    console.log(currentPage, "currentPage");
   }
+
   //console.log(datas);
 
   //console.log(searchData);
